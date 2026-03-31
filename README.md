@@ -14,8 +14,6 @@ With PlantGenoANN, you can perform end-to-end genome annotation with a single co
   * `gff_writer.py`: Formats model predictions into standard GFF3 output.
   * `configuration.py`: Manages pipeline hyperparameters.
 
-## ⚙️ Installation & Environment
-We recommend creating a fresh Conda environment for PlantGenoANN (Python 3.8+).
 
 ## ⚙️ Installation & Environment
 We recommend creating a fresh Conda environment for PlantGenoANN (Python 3.8+).
@@ -30,7 +28,7 @@ git clone https://github.com/Your-Org/PlantGenoANN.git
 cd PlantGenoANN
 
 # 3. Install dependencies
-pip install -r requirements.txt
+pip install -r requirements.txt'''
 
 🚀 Quick Start (Usage)
 To run the full annotation pipeline, use the run_annotator.py script. The pipeline will automatically handle sliding windows, multi-process model inference, and standard GFF3 assembly.
