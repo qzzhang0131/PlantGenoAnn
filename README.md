@@ -33,10 +33,6 @@ cd PlantGenoANN
 pip install -r requirements.txt
 ```
 
-
-## 🚀 Quick Start (Usage)
-没问题，这样你点击一次右上角的“复制”按钮就可以全部带走了。你可以直接将下面的全部内容粘贴到你的 README.md 文件中：
-
 Markdown
 ## 🚀 Quick Start (Usage)
 
