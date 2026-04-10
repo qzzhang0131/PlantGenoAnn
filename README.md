@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 📖 Introduction
-**PlantGenoANN** is a plant genomic segmentation model designed for predicting genomic elements at single-nucleotide resolution. Built upon the **PlantBiMoE** architecture with a 1D U-Net segmentation head, it automates the annotation of gene structures—including genes, CDSs, and exons—on both forward and reverse strands. 
+**PlantGenoANN** is a plant genomic segmentation model designed for predicting genomic elements at single-nucleotide resolution. Built upon the **[PlantBiMoE](https://github.com/HUST-Keep-Lin/PlantBiMoE)** architecture with a 1D U-Net segmentation head, it automates the annotation of gene structures—including genes, CDSs, and exons—on both forward and reverse strands. 
 
 Beyond standard annotation, PlantGenoANN serves as a **foundation model**, adaptable via fine-tuning to predict diverse omic signal tracks such as RNA-seq and ATAC-seq.
 
