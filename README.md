@@ -1,16 +1,16 @@
-# PlantGenoANN: Plant Genome ANNotation Model
+# PlantGenoAnn: Plant Genome Annotation Model
 
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-yellow)](https://huggingface.co/qzzhang/PlantGenoANN)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 📖 Introduction
-**PlantGenoANN** is a plant genomic segmentation model designed for predicting genomic elements at single-nucleotide resolution. Built upon the **[PlantBiMoE](https://github.com/HUST-Keep-Lin/PlantBiMoE)** architecture with a 1D U-Net segmentation head, it automates the annotation of gene structures—including genes, CDSs, and exons—on both forward and reverse strands. 
+**PlantGenoAnn** is a plant genomic segmentation model designed for predicting genomic elements at single-nucleotide resolution. Built upon the **[PlantBiMoE](https://github.com/HUST-Keep-Lin/PlantBiMoE)** architecture with a 1D U-Net segmentation head, it automates the annotation of gene structures—including genes, CDSs, and exons—on both forward and reverse strands. 
 
 Beyond standard annotation, PlantGenoANN serves as a **long-context plant genomic foundation model** (up to 49,152 bp), adaptable via fine-tuning to predict diverse omic signal tracks such as RNA-seq and ATAC-seq.
 
 ## 🤗 Model Access
-The pre-trained weights for PlantGenoANN are hosted on Hugging Face:
-* **Model Hub:** [qzzhang/PlantGenoAnn-M](https://huggingface.co/qzzhang/PlantGenoAnn-M)
+The pre-trained weights for PlantGenoAnn are hosted on Hugging Face:
+* **Model Hub:** [qzzhang/PlantGenoAnn-model-plants](https://huggingface.co/qzzhang/PlantGenoAnn-M)
 
 ---
 
@@ -26,8 +26,8 @@ conda create -n plantgenoann python=3.8
 conda activate plantgenoann
 
 # 2. Clone the repository
-git clone https://github.com/qzzhang0131/PlantGenoANN.git
-cd PlantGenoANN
+git clone https://github.com/qzzhang0131/PlantGenoAnn.git
+cd PlantGenoAnn
 
 # 3. Install dependencies
 pip install -r requirements.txt
@@ -36,7 +36,7 @@ The model requires the `mamba-ssm` and `causal-conv1d` libraries for the core ba
 
 ## 🚀 Quick Start (Usage)
 
-You can use PlantGenoANN in two ways: by directly interacting with the model in Python for sequence analysis, or by running the complete pipeline script to generate standard annotation files.
+You can use PlantGenoAnn in two ways: by directly interacting with the model in Python for sequence analysis, or by running the complete pipeline script to generate standard annotation files.
 
 ### 1. Direct Model Inference (Python)
 You can retrieve both genomic feature probabilities and sequence embeddings using the following snippet:
@@ -46,7 +46,7 @@ import torch
 from transformers import AutoTokenizer, AutoModel
 
 # Load model and tokenizer
-repo_id = "qzzhang/PlantGenoANN"
+repo_id = "qzzhang/PlantGenoAnn-model-plants"
 tokenizer = AutoTokenizer.from_pretrained(repo_id, trust_remote_code=True)
 model = AutoModel.from_pretrained(repo_id, trust_remote_code=True)
 
@@ -88,7 +88,7 @@ To run the full annotation pipeline, use the `run_annotator.py` script. The pipe
 ```bash
 python run_annotator.py \
     -i /examples/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
-    -m /PlantGenoANN \
+    -m /PlantGenoAnn-model-plants \
     -o output_annotation.gff3
 ```
 
