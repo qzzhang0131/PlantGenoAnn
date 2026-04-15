@@ -118,5 +118,5 @@ PlantGenoANN is highly customizable. You can adjust sliding windows, confidence 
 ## 📜 License
 See the LICENSE file for details.
 ## 📧 Contact
-Feel free to contact us if you have any questions or suggestions regarding the code and models.
+Feel free to contact qzzhang@webmail.hzau.edu.cn if you have any questions or suggestions regarding the code and models.
 
