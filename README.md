@@ -88,7 +88,7 @@ To run the full annotation pipeline, use the `run_annotator.py` script. The pipe
 **Basic Command:**
 ```bash
 python run_annotator.py \
-    -i /examples/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
+    -i /example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
     -m /PlantGenoAnn-model-plants \
     -o output_annotation.gff3
 ```
