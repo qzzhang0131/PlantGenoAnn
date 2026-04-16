@@ -82,15 +82,17 @@ hidden_states = outs.hidden_states.detach()
 print(f"Sequence embeddings shape is: {hidden_states.shape}")
 ```
 
-### 2. Full Annotation Pipeline
-To run the full annotation pipeline, use the `run_annotator.py` script. The pipeline will automatically handle sliding windows, multi-process model inference, and standard GFF3 assembly.
+### 2. Full Prediction Pipeline
+To run the full annotation pipeline, use the `run_annotator.py` script. The pipeline will automatically handle sliding windows, multi-GPU model inference, and standard output format.
 
 **Basic Command:**
 ```bash
 python run_annotator.py \
-    -i /example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
-    -m /PlantGenoAnn-model-plants \
-    -o output_annotation.gff3
+    -i ./example/Arabidopsis_lyrata.v.1.0.dna.chromosome.8.fa \
+    -s Arabidopsis_lyrata
+    -m ./PlantGenoAnn-model-plants \
+    -o ./examples \
+    -f bigwig
 ```
 
 
