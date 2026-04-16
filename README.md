@@ -83,7 +83,7 @@ print(f"Sequence embeddings shape is: {hidden_states.shape}")
 ```
 
 ### 2. Full Prediction Pipeline
-To run the full annotation pipeline, use the `run_annotator.py` script. The pipeline will automatically handle sliding windows, multi-GPU model inference, and standard output format.
+To run the full prediction pipeline, use the `run_annotator.py` script. The pipeline will automatically handle sliding windows, multi-GPU model inference, and standard output format.
 
 **Basic Command:**
 ```bash
