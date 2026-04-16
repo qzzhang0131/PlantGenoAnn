@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 You can use PlantGenoAnn in two ways: directly using the [transformers](https://github.com/huggingface/transformers) library for model inference and obtaining embeddings, or running the complete pipeline script to generate prediction tracks or standard GFF annotation files.
 
-### 1. Direct Model Inference (Python)
+### 1. Direct Model Inference
 You can retrieve both genomic feature probabilities and sequence embeddings using the following snippet:
 
 ```python
@@ -82,7 +82,7 @@ hidden_states = outs.hidden_states.detach()
 print(f"Sequence embeddings shape is: {hidden_states.shape}")
 ```
 
-### 2. Full Annotation Pipeline (CLI)
+### 2. Full Annotation Pipeline
 To run the full annotation pipeline, use the `run_annotator.py` script. The pipeline will automatically handle sliding windows, multi-process model inference, and standard GFF3 assembly.
 
 **Basic Command:**
