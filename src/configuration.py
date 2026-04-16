@@ -9,7 +9,9 @@ class PipelineConfig:
     
     # Input file paths
     input_fasta: str
+    species: str
     output_file: str
+    output_format: str
     model_path: str
     cache_path: str
     
@@ -38,31 +40,33 @@ class PipelineConfig:
         """Validate and initialize configuration"""
         # Validate input file and model path exist
         if not os.path.exists(self.input_fasta):
-            raise FileNotFoundError(f"Input FASTA file not found: {self.input_fasta}")
+            raise FileNotFoundError(f"Input FASTA file not found: {self.input_fasta}.")
         if not os.path.exists(self.model_path):
-            raise FileNotFoundError(f"Model file not found: {self.model_path}")
-        if os.path.isdir(self.output_file):
-            raise ValueError("Output must be a file not a directory")
+            raise FileNotFoundError(f"Model file not found: {self.model_path}.")
+        if not os.path.isdir(self.output_file):
+            raise ValueError("Output file must be a directory not a file.")
         
         # Set default exclusion patterns
         if self.exclude_patterns is None:
             self.exclude_patterns = ["random", "Un", "alt", "hap"]
         
         # Validate parameters
+        if self.output_format not in {"bigwig","gff"}:
+            raise ValueError("Output format must be in 'bigwig' or 'gff'.")
         if self.sequence_length <= 0:
-            raise ValueError("Sliding window size must be positive")
+            raise ValueError("Sliding window size must be positive.")
         if self.overlap_offset >= self.sequence_length:
-            raise ValueError("Overlap window size must be smaller than sliding window size")
+            raise ValueError("Overlap window size must be smaller than sliding window size.")
         if self.overlap_offset < 0:
-            raise ValueError("Overlap window size cannot be negative")
+            raise ValueError("Overlap window size cannot be negative.")
         if self.overlap_offset % 4 != 0:
-            raise ValueError("Overlap window size must be divisible by 4")
+            raise ValueError("Overlap window size must be divisible by 4.")
         if self.threshold <= 0.0 or self.threshold >=1.0:
-            raise ValueError("Threshold must between 0 to 1")
+            raise ValueError("Threshold must between 0 to 1.")
         if self.chunk_size <= 0:
-            raise ValueError("Chunk size cannot be negative")
+            raise ValueError("Chunk size cannot be negative.")
         if self.min_chrom_length <= self.sequence_length:
-            raise ValueError("Minimum chromosome length must be at least sequence length")
+            raise ValueError("Minimum chromosome length must be at least sequence length.")
     
     @classmethod
     def from_json(cls, config_path: str):
