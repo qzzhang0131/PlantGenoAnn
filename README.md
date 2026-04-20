@@ -35,11 +35,10 @@ pip install -r requirements.txt
 pip install ninja packaging
 MAX_JOBS=4 pip install causal-conv1d==1.2.0.post2 mamba-ssm==1.2.0.post1 flash-attn==2.5.6 --no-build-isolation
 
-> **Note:** > If you encounter a `fatal error: crypt.h: No such file or directory` error during installation or model inference (Triton JIT compilation), it means the Conda compiler cannot locate the system's C headers. Please run the following commands to explicitly specify the include paths before running the script:
-> ```bash
-> export C_INCLUDE_PATH=/usr/include:/usr/include/x86_64-linux-gnu:$C_INCLUDE_PATH
-> export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/x86_64-linux-gnu:$CPLUS_INCLUDE_PATH
-> ```
+Note: If you encounter a `fatal error: crypt.h: No such file or directory` error during installation or model inference (Triton JIT compilation), it means the Conda compiler cannot locate the system's C headers. Please run the following commands to explicitly specify the include paths before running the script:
+export C_INCLUDE_PATH=/usr/include:/usr/include/x86_64-linux-gnu:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/x86_64-linux-gnu:$CPLUS_INCLUDE_PATH
+
 ```
 
 ## 🚀 Quick Start (Usage)
