@@ -22,8 +22,7 @@ The pre-trained weights for **PlantGenoAnn-model-plants** and **PlantGenoAnn-mul
 
 ## ⚙️ Installation & Environment
 The model requires the [mamba-ssm](https://github.com/state-spaces/mamba) and [causal-conv1d](https://github.com/Dao-AILab/causal-conv1d) libraries for the core backbone.
-```bash
-# 1. Clone repository & create environment
+```# 1. Clone repository & create environment
 git clone https://github.com/qzzhang0131/PlantGenoAnn.git && cd PlantGenoAnn
 conda create -n plantgenoann python=3.8 -y
 conda activate plantgenoann
@@ -36,6 +35,11 @@ pip install -r requirements.txt
 pip install ninja packaging
 MAX_JOBS=4 pip install causal-conv1d==1.2.0.post2 mamba-ssm==1.2.0.post1 flash-attn==2.5.6 --no-build-isolation
 
+> **Note:** > If you encounter a `fatal error: crypt.h: No such file or directory` error during installation or model inference (Triton JIT compilation), it means the Conda compiler cannot locate the system's C headers. Please run the following commands to explicitly specify the include paths before running the script:
+> ```bash
+> export C_INCLUDE_PATH=/usr/include:/usr/include/x86_64-linux-gnu:$C_INCLUDE_PATH
+> export CPLUS_INCLUDE_PATH=/usr/include:/usr/include/x86_64-linux-gnu:$CPLUS_INCLUDE_PATH
+> ```
 ```
 
 ## 🚀 Quick Start (Usage)
