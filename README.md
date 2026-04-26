@@ -170,6 +170,8 @@ Under default configuration, we recommend the following `batch_size` settings ba
 
 It is strongly recommended to follow this table when setting the `--batch_size` parameter to ensure optimal performance and stability.
 
+---
+
 ## 📜 License
 See the LICENSE file for details.
 ## 📧 Contact
