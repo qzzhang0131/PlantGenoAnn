@@ -144,7 +144,6 @@ PlantGenoAnn prediction pipeline is highly customizable. You can adjust sliding 
 ## ⚡ Hardware Requirements
 
 PlantGenoAnn inference **requires NVIDIA GPUs with Ampere architecture or newer** (e.g., RTX 30-series, RTX 40-series, A100, H100, etc.).  
-Older architectures such as Turing (RTX 20-series) or earlier **are not supported** due to required CUDA extensions.
 
 ### Inference Time for Different Plant Genomes
 
