@@ -13,8 +13,8 @@ Built upon the **[PlantBiMoE](https://github.com/HUST-Keep-Lin/PlantBiMoE)** arc
 The pre-trained weights for **PlantGenoAnn-model-plants** and **PlantGenoAnn-multi-species** are hosted on Hugging Face:
 |Model Name|Access Link|Species|Training Tokens|
 | :--- | :--- | :--- | :--- |
-| model-plants |https://huggingface.co/qzzhang/PlantGenoAnn-model-plants| 9 model plants | 18B |
-| multi-species | https://huggingface.co/qzzhang/PlantGenoAnn-multi-species| 42 plant species | 72B |
+| model-plants |https://huggingface.co/qzzhang/PlantGenoAnn-model-plants| 9 | 18B |
+| multi-species | https://huggingface.co/qzzhang/PlantGenoAnn-multi-species| 42 | 72B |
 
 ## 📁 Repository Structure
 * `run_annotator.py`: Main entry point (extraction, tokenization, inference dispatch).
